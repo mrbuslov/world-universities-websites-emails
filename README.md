@@ -7,6 +7,6 @@
 # About
 - `usa_universities.json` - unversities of the US
 - `usa_colleges.json` - colleges of the US
-- `world_universities.json` - sum of above universities n colleges + OTHER countries' universities
+- `world_universities.json` - OTHER countries' universities + sum of above universities n colleges
 
 Note: The project is in improvement mode. Not all universities have emails, working on it.
