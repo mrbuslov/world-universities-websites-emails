@@ -1,9 +1,21 @@
 import json
+import requests
 
 
 def find_email_by_website_name(website: str) -> list[str]:
+    '''Uses Snov.io api to get first couple of emails'''
     # https://snov.io/email-finder
-    pass
+    company_data = requests.get(f"https://app.snov.io/api/public/search/domainCompanies?query={website}").json()['data']
+    if not company_data:
+        return []
+    company_id = company_data[0]['id']
+    emails_list = requests.get(f"https://app.snov.io/api/public/search/emails?id={company_id}&domain={website}").json()['data']
+    if not emails_list:
+        return []
+    return [
+        f"{em['localPart']}@{em['domain']}"
+        for em in emails_list
+    ]
 
 
 def update_separate_jsons() -> None:
