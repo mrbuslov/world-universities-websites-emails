@@ -6,7 +6,7 @@
 - [github.com/Hipo/university-domains-list](https://github.com/Hipo/university-domains-list)
 - [searchenginesmarketer.com](https://searchenginesmarketer.com/company/resources/university-college-list/)
 - [doors.stanford.edu](https://doors.stanford.edu/~sr/universities.html)
-- [github.com/axel-magard/PyAutoGUI-Recorder](https://github.com/axel-magard/PyAutoGUI-Recorder) - for parsing from Snov IO (NOTE: browser extension gives more free emails)
+- [github.com/axel-magard/PyAutoGUI-Recorder](https://github.com/axel-magard/PyAutoGUI-Recorder) - for parsing from Snov IO (NOTE: browser extension gives more free emails). NOTE: Snov IO limit is 50 emails
 
 # About
 - `usa_universities.json` - unversities of the US

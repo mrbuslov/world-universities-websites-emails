@@ -81,6 +81,12 @@ def find_n_write_emails():
     for university in universities:
         count += 1
         print(f'Processing {count}/{len(universities)}')
+        
+        if university['country'] != 'United States':
+            continue
+        elif len(university['emails']) > 1:
+            continue
+        
         website = university['website']
         emails = find_email_by_website_name_with_mouse(website)
         print(f'website {website} emails: {emails}')
@@ -105,6 +111,9 @@ def update_separate_jsons() -> None:
     with open('world_universities.json', 'r') as f:
         universities_world = json.loads(f.read())
         
+    # sort
+    universities_world = sorted(universities_world, key=lambda x: (x["emails"] == [], x["emails"]))
+        
     colleges_usa = [
         uni for uni in universities_world
         if (
@@ -119,6 +128,9 @@ def update_separate_jsons() -> None:
             and uni['type'] != 'College'
         )
     ]
+    
+    with open('world_universities.json', 'w') as f:
+        f.write(json.dumps(universities_world, indent=4))
         
     with open('usa_universities.json', 'w') as f:
         f.write(json.dumps(universities_usa, indent=4))
